@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda online</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+
+<body>
+    <header>
+        <h1>Tienda saludable</h1>
+
+        <div class="container-icon">
+
+            <ion-icon class="icon" name="bag"></ion-icon>
+            <div class="count-products">
+                <span id="contador-productos"> 1 </span>
+            </div>
+
+            <div class="container-cart-products hidden-cart">
+                <!-- <div class="cart-product">
+                    <div class="info-cart-product">
+                        <span class="shopping-cart"> </span>
+                        <p class="title-cart"> </p>
+                        <span class="price-product-cart"> </span>
+                    </div>
+
+                    <ion-icon class="icon-remove" name="trash"></ion-icon>
+                </div>
+
+                <div class="cart-total">
+                    <h3>Total:</h3>
+                    <span class="total-pay"> 000</span>
+                </div> -->
+            </div>
+
+        </div>
+    </header>
+
+    <section class="container-products">
+
+        <!-- PRODUCTO 1-->
+        <div class="product">
+
+            <img src="assets/img/zanahoria.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Zanahorias </h2>
+                <p class="price">$1000</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 2-->
+        <div class="product">
+
+            <img src="assets/img/tomates.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Tomates </h2>
+                <p onclick="getValue('1000')" class="price">$1000</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 3-->
+        <div class="product">
+
+            <img src="assets/img/pimenton.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Pimentones </h2>
+                <p onclick="getValue('1000')" class="price">$1000</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 4-->
+        <div class="product">
+
+            <img src="assets/img/lechuga.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Lechuga </h2>
+                <p onclick="getValue('1000')" class="price">$1000</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 5-->
+        <div class="product">
+
+            <img src="assets/img/cebolla.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Cebollas </h2>
+                <p onclick="getValue('1000')" class="price">$1000</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 6-->
+        <div class="product">
+
+            <img src="assets/img/brocoli.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Brocoli </h2>
+                <p onclick="getValue('1500')" class="price">$1500</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 7-->
+        <div class="product">
+
+            <img src="assets/img/betarraga.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Betarraga </h2>
+                <p onclick="getValue('1000')" class="price">$1000</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 8-->
+        <div class="product">
+
+            <img src="assets/img/berenjenas.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Berenjenas </h2>
+                <p class="price">$800</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 9-->
+        <div class="product">
+
+            <img src="assets/img/arveja.jpg" alt="verduras">
+
+            <div class="product-info">
+                <h2 class="title"> Arvejas </h2>
+                <p class="price">$1000</p>
+                <button class="addToCart">Añadir al carro</button>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!--  <button type="button" name="button" onclick="agregar()"> Añadir producto</button> -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
