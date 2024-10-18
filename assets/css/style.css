@@ -40,9 +40,9 @@ header {
 
 .count-products {
     position: absolute;
-    top: 30%;
-    right: 10px;
-    background-color: #000;
+    top: 12%;
+    left: 10px;
+    background-color: #333;
     color: #fff;
     width: 20px;
     height: 20px;
@@ -86,7 +86,7 @@ header {
     margin-left: 10px;
 }
 
-.shopping-cart {
+.shopping-cart-quantity {
     font-weight: 400;
     font-size: 20px;
 }
