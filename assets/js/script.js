@@ -12,15 +12,16 @@ function addToCartClicked(event) {
     const button = event.target;
     const product = button.closest('.product');
 
-    console.log(product.id)
+
 
     const productTitle = product.querySelector('.title').textContent;
-    const productPrice = product.querySelector('.price').textContent;
+    const productPrice = product.querySelector('.price').textContent.replace('$', '');
+
 
     let myProduct = {
         id: product.id,
         title: productTitle,
-        price: productPrice,
+        price: parseInt(productPrice),
         quantity: 1
     }
 
@@ -35,12 +36,15 @@ function addToCartClicked(event) {
         productFound.quantity += 1
 
         document.getElementById('prod_' + productFound.id).innerHTML = productFound.quantity
+        ShoppingCartTotal()
 
     }
-
     document.getElementById('contador-productos').innerHTML = carrito.length
 
+
 }
+
+// Inyectando cart
 
 function addProductToShoppingCart(productTitle, productPrice, id) {
     const shoppingCartRow = document.createElement('div');
@@ -49,31 +53,61 @@ function addProductToShoppingCart(productTitle, productPrice, id) {
                     <div class="info-cart-product">
                         <span  id="prod_${id}" class="shopping-cart-quantity"> 1 </span>
                         <p class="title-cart"> ${productTitle} </p>
-                        <span class="price-product-cart"> ${productPrice} </span>
+                        <span class="price-product-cart"> $${productPrice} </span>
                     </div>
 
-                    <ion-icon class="icon-remove" name="trash"></ion-icon>
+                    <ion-icon class="icon-remove" onclick="deleteProduct(${id})" name="trash"></ion-icon>
              </div>`;
 
 
     shoppingCartRow.innerHTML = shoppingCartContent;
     containerCartProducts.append(shoppingCartRow);
 
-    updateShoppingCartTotal()
+    ShoppingCartTotal()
+}
+
+
+function deleteProduct(id) {
+
+    let index = carrito.findIndex(product => {
+        return product.id == id
+    })
+    carrito.splice(index, 1)
+    const element = document.querySelectorAll('.cart-product')
+    element.forEach(item => {
+        item.parentNode.removeChild(item)
+    })
+    carrito.forEach(product => {
+        addProductToShoppingCart(product.title, product.price, product.id)
+    })
+    ShoppingCartTotal()
+    document.getElementById('contador-productos').innerHTML = carrito.length
+
 
 }
 
-function updateShoppingCartTotal() {
+
+
+// probando sumar total
+
+function ShoppingCartTotal() {
     let total = 0;
+
     const cartTotal = document.querySelector('.total-pay');
-    const products = document.querySelectorAll('.product');
-
-    products.forEach(product => {
-        const shoppingCartPrice = product.querySelector('.price');
-
-        const shoppingCartPriceNumber = Number(shoppingCartPrice.textContent.replace('$', ' '));
 
 
-    });
+
+    total = carrito.reduce((total, product) => {
+        console.log(product.price)
+        console.log(product.quantity)
+        console.log(total)
+
+        console.log((parseInt(product.price) * parseInt(product.quantity)))
+        return total + (product.price * product.quantity);
+
+    }, 0);
+
+
+    cartTotal.innerHTML = `$${total}`;
 
 }

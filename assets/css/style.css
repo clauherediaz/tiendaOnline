@@ -24,12 +24,24 @@ img {
 
 header {
     display: flex;
-    justify-content: space-around;
-    margin: 30px 0 30px 0;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+h1,
+h3 {
+    color: rgb(70, 160, 50);
+    text-align: center;
+}
+
+h2,
+p {
+    text-align: center;
 }
 
 .container-icon {
     position: relative;
+    left: -45px;
 }
 
 .icon-remove {
@@ -40,7 +52,7 @@ header {
 
 .count-products {
     position: absolute;
-    top: 12%;
+    top: 17%;
     left: 10px;
     background-color: #333;
     color: #fff;
@@ -55,16 +67,16 @@ header {
 .container-cart-products {
     position: absolute;
     top: 40px;
-    right: 0;
     border-radius: 10px;
     background-color: #fff;
-    width: 300px;
+    opacity: 0.9;
+    width: 350px;
     z-index: 1;
 }
 
 .cart-product {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 30px;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
@@ -72,12 +84,8 @@ header {
 
 .info-cart-product {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex: 0.8;
-}
-
-.title-cart {
-    font-size: 20px;
 }
 
 .price-product-cart {
@@ -96,7 +104,13 @@ header {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
     gap: 20px;
+}
+
+.title-cart {
+    font-size: 20px;
+    padding: 0 0px 0 10px;
 }
 
 .cart-total h3 {
@@ -106,7 +120,7 @@ header {
 
 .total-pay {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 
@@ -142,7 +156,7 @@ header {
 }
 
 .product-info {
-    padding: 15px 30px;
+    padding: 15px 15px;
     line-height: 2;
     display: flex;
     flex-direction: column;
@@ -158,7 +172,7 @@ header {
 
 .product-info button {
     border: none;
-    background-color: rgb(6, 130, 31);
+    background-color: rgb(70, 160, 50);
     color: #fff;
     padding: 10px 20px;
     cursor: pointer;
